@@ -1,0 +1,23 @@
+
+  <form (ngSubmit)="getAllProducts(prodForm);" #prodForm="ngForm" class="example-form" style="margin: 0 auto;">
+      <mat-form-field class="example-full-width">
+      <input matInput placeholder="Producto" [(ngModel)]="prod" name="prod" required>
+    </mat-form-field>
+
+    <button class="example-button-row" mat-button block>Buscar</button>
+  </form> 
+
+  <mat-card *ngFor = "let data of products.results">
+    <mat-card-header>
+    <mat-card-title>
+      <H3>Nombre: {{data.title}}</H3>
+      <h4>Precio: {{data.price}} $</h4>
+       
+      <img src="{{data.thumbnail}}" alt="Photo" width="100" height="100">
+  
+    </mat-card-title>
+  </mat-card-header>
+
+
+
+</mat-card>
